@@ -6,7 +6,7 @@
 /*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:52:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/14 14:26:42 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/10/26 17:25:25 by tpotillion       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int ft_atoi(const char *nptr)
 	int i;
 	int result;
 	int sign;
-	int cpt;
 
 	i = 0;
 	result = 0;

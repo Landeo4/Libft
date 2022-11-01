@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 13:15:20 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/26 17:27:14 by tpotillion       ###   ########.fr       */
+/*   Created: 2022/10/23 17:59:40 by tpotillion        #+#    #+#             */
+/*   Updated: 2022/10/23 18:00:54 by tpotillion       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isisnalnum(int c)
+size_t ft_strlcat (char *dest,const char *src, size_t size)
 {
-	if (isalpha(c) == 1)
-		if (isdigit(c) == 1)
-			return (1);
-	return (0);
+	int i;
+	int lens;
+	int lens2;
+
+	
 }

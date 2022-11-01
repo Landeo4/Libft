@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 13:15:20 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/26 17:27:14 by tpotillion       ###   ########.fr       */
+/*   Created: 2022/10/23 18:08:56 by tpotillion        #+#    #+#             */
+/*   Updated: 2022/10/27 15:04:36 by tpotillion       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isisnalnum(int c)
+char *strchr(const char *s, int c)
 {
-	if (isalpha(c) == 1)
-		if (isdigit(c) == 1)
-			return (1);
-	return (0);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+			return (((char *)s + i));
+		i++;
+	}
+	if ((unsigned char)c == '\0')
+		return (((char *)s) + i);
+	return (NULL);
 }
