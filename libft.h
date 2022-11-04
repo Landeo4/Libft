@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:35 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/26 17:26:32 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/04 14:42:24 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,32 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-size_t ft_strlen(const char *s);
-char *ft_strnstr(const char *big, const char *little, size_t len);
-void ft_srlcpy(char *dest, const char *src, size_t size);
-void *ft_memset(void *s,int c, size_t n);
-int ft_isdigit(int c);
-int ft_isascii(int c);
-int is_alpha(int c);
-int ft_isisnalnum(int c);
-void ft_bzero(void *s, size_t n);
 int ft_atoi(const char *nptr);
+void ft_bzero(void *s, size_t n);
+void *ft_calloc(size_t nmemb, size_t size);
+int ft_isalnum(int c);
+int is_alpha(int c);
+int ft_isascii(int c);
+int ft_isdigit(int c);
+int ft_isprint(int c);
+void *ft_memccpy(void *dest, const void *src, int c, size_t n);
+void *ft_memset(void *s,int c, size_t n);
+void ft_putchar_fd(char c, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putstr_fd(char *s, int fd);
+char **ft_split(char const *s,char c);
+char *ft_strchr(const char *s, int c);
+char *ft_strdup(const char *s);
+char *ft_strjoin(char const *s1, char const *s2);
+size_t ft_strlcat (char *dest,const char *src, size_t size);
+void ft_srlcpy(char *dest, const char *src, size_t size);
+size_t ft_strlen(const char *s);
+char *ft_strmapi(char const *s, char (*f) (unsigned int, char));
+char *ft_strnstr(const char *big, const char *little, size_t len);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+int ft_toupper(int c);
 
 
 #endif

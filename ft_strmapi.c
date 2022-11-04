@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 18:12:07 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/03 16:12:22 by tpotillion       ###   ########.fr       */
+/*   Created: 2022/11/01 13:40:54 by tpotillion        #+#    #+#             */
+/*   Updated: 2022/11/03 19:43:58 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isprint(int c)
+char *ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	if (c >= 0 && c <= 31)
-		return (1);
-	return (0);
+	unsigned int i;
+	char *string;
+
+	i = 0;
+	while (s[i])
+	{
+		s[i] = f(i,string);
+		i++;
+	}
+	return (s);
 }

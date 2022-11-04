@@ -6,14 +6,15 @@
 /*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:37:00 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/14 14:26:07 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/03 18:42:10 by tpotillion       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 int ft_isascii(int c)
 {
-	
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

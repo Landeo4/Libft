@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:09:41 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/27 15:04:51 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/04 14:30:29 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 void ft_srlcpy(char *dest, const char *src, size_t size)
 {
 	int i;
+	int j;
 
+	j = 0;
 	i = 0;
-	size = ft_strlen(src);
 	while (dest[i])
-	{
 		i++;
+	while (src[j] && (int)size >= i)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
 }
