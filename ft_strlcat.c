@@ -6,13 +6,13 @@
 /*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 17:59:40 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/04 15:13:56 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/10 17:03:18 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat (char *dest,const char *src, size_t size)
+size_t ft_strlcat(char *dest,const char *src, size_t size)
 {
 	int i;
 	int j;
@@ -35,11 +35,4 @@ size_t ft_strlcat (char *dest,const char *src, size_t size)
 		cpt++;
 	}
 	return (cpt);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%zu",ft_strlcat("yo","fuck all", 10));
 }

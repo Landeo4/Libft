@@ -6,7 +6,7 @@
 /*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:55:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/04 14:41:53 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/10 17:03:08 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,4 @@ char *ft_strjoin(char const *s1, char const *s2)
 		return (str);
 	ft_cpy(s1, s2, str);
 	return (str);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	int i = 0;
-	while (i < 20)
-	{
-		printf("%s", ft_strjoin("salut","les bg"));
-		i++;
-	}
 }

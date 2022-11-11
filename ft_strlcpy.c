@@ -6,13 +6,13 @@
 /*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:09:41 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/04 14:30:29 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/09 10:11:06 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_srlcpy(char *dest, const char *src, size_t size)
+void ft_srtlcpy(char *dest, const char *src, size_t size)
 {
 	int i;
 	int j;

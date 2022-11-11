@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 13:40:54 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/09 10:22:12 by tpotilli@st      ###   ########.fr       */
+/*   Created: 2022/11/09 10:58:17 by tpotilli@st       #+#    #+#             */
+/*   Updated: 2022/11/10 17:00:48 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f) (unsigned int, char))
+int ft_tolower(int c)
 {
-	unsigned int i;
-	char	*str;
-
-	i = ft_strlen(s);
-	if (s == NULL || f == NULL)
-		return (NULL);
-	str = malloc(sizeof(char) * ft_strlen(s));
-	while(i > 0)
-	{
-		str[i] = f(i, s[i]);
-		i--;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		c -= 32;
+	else if(c >= 'a' && c <= 'z')
+		c += 32;
+	return (c);
 }

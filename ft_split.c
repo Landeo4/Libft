@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:59:52 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/26 13:52:22 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/09 09:37:45 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,33 +75,4 @@ char **ft_split(char const *s,char c)
 	ft_sep(s, c);
 	split[index_word][index_letter] = '\0';
 	return (split);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	int i;
-	int j = 0;
-	char **split = ft_split("lalalalacava",'a');
-
-	j = 0;
-	i = 0;
-	while (split[i])
-	{
-		while (split[i][j])
-		{
-			printf("%c", split[i][j]);
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
 }

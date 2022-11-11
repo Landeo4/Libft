@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:02:31 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/23 15:52:04 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/10 17:02:38 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 **	And will then fill the allocated array with 0 and then return it.
 */
 
-void *calloc(size_t nmemb, size_t size)
+void *ft_calloc(size_t nmemb, size_t size)
 {
 	void *tab;
 
