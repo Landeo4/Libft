@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 20:45:02 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2022/11/10 21:32:26 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/11 11:41:06 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_lenght(int n)
 {
 	unsigned int lengh;
 
-	lens = 
+	lens = 0;
 }
 
 char *ft_w(int n)

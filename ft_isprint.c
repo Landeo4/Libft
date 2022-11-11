@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:12:07 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/10 16:59:01 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/11 14:41:55 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_isprint(int c)
 {
-	if (c >= 0 && c <= 31)
+	if (c > 31 && c < 127)
 		return (1);
 	return (0);
 }

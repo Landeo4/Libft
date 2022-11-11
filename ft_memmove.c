@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:58:21 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2022/11/10 16:53:36 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/11 14:01:26 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	string2 = src;
 	if (string < string2 && n > i)
 	{
-		while (string[i])
+		while (string[i] && n > i)
 		{
 			string[i] = string2[i];
 			i++;

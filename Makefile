@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+         #
+#    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/11/10 17:06:27 by tpotilli@st      ###   ########.fr        #
+#    Updated: 2022/11/11 12:23:07 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,8 @@ SRCS	=	ft_atoi.c\
 			ft_memcmp.c\
 			ft_memchr.c\
 			ft_tolower.c\
+			ft_strrchr.c\
+			ft_strncmp.c\
 
 OBJS	=	$(SRCS:.c=.o)
 

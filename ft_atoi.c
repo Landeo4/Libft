@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotillion <marvin@42.fr>                  +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:52:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/10/26 17:25:25 by tpotillion       ###   ########.fr       */
+/*   Updated: 2022/11/11 15:41:35 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ int ft_atoi(const char *nptr)
 		i++;
 	}
 	return (result * sign);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	printf("%d",ft_atoi("46576"));
 }
