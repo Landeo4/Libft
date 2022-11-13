@@ -6,7 +6,7 @@
 /*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 17:59:40 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/10 17:03:18 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/12 14:15:57 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ size_t ft_strlcat(char *dest,const char *src, size_t size)
 
 	i = 0;
 	j = 0;
+	cpt = 0;
 	while (dest[i])
 	{
 		i++;
