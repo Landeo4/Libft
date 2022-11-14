@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:59:52 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/09 09:37:45 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/14 15:59:19 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,25 @@ char **ft_split(char const *s,char c)
 	split[index_word][index_letter] = '\0';
 	return (split);
 }
+
+/*#include <stdio.h>
+
+int main()
+{
+	char *tab = "salut les gars";
+	int i;
+
+	i = 0;
+	while (i < 10)
+	{
+		printf("%c",ft_split(tab, " "));
+		i++;
+	}
+	i = 0;
+	while (i < 10)
+	{
+		free(tab[i]);
+	}
+	free(tab);
+}
+*/

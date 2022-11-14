@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:55:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/10 17:03:08 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/14 16:31:16 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char *ft_cpy(char const *s1, char const *s2, char *str)
 	}
 	return (str);
 }
+
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	int i;
@@ -47,4 +48,13 @@ char *ft_strjoin(char const *s1, char const *s2)
 		return (str);
 	ft_cpy(s1, s2, str);
 	return (str);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char *tab = "salut";
+	char *tab2 = "je m'apelle theo";
+	printf("%s",ft_strjoin(tab,tab2));	
 }
