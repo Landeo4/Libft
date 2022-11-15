@@ -3,12 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:52:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/14 16:10:39 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:15:29 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* 
+**	this function takes as parameters:
+**	const char *nptr -> the string you want to turn on int
+**
+** 	===========================================================================
+**	
+**	ft_atoi is used to turn an char to an int,
+**	to do this he go throught the string until he see a plus or less
+**	then atoi start coping the string in an int to perform the conversion
+*/
 
 #include "libft.h"
 
@@ -24,13 +35,15 @@ int ft_atoi(const char *nptr)
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '-')
+	{
 		sign *= -1;
-	while (nptr[i] == '+')
+		i++;
+	}
+	else if (nptr[i] == '+')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result *= 10;
-		result = nptr[i] - '0';
+		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (result * sign);

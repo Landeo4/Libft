@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:02:31 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/14 16:17:31 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:44:32 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void *ft_calloc(size_t nmemb, size_t size)
 {
 	void *tab;
 
+	if (nmemb == 0 || size == 0 || nmemb >= 65535 || size >= 65535)
+		return (NULL);
 	tab = malloc(size * nmemb);
 	if (tab == NULL)
 		return (NULL);
