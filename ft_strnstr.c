@@ -6,9 +6,22 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:59:28 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/14 11:03:58 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:42:56 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	This function takes as parameters:
+**	
+**	const char *big -> the string where we search the occurence
+**	const char *little -> the string you want to use to search the occurence
+**	size_t len -> the size you want to use
+**
+**	==========================================================================
+**	
+**	This function will search the first occurence in big with little
+**	He will use len for the limit of the where you want to search
+*/
 
 #include "libft.h"
 
@@ -19,13 +32,13 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little == NULL || big == NULL)
+	if (little[i] == '\0')
 		return ((char*)big);
-	while (big[i] && little[j] && len > i)
+	while (big[i] && (len > i))
 	{
-		while (big[i] == little[j])
+		while (big[i + j] == little[j] && (i + j < len))
 		{
-			if (little[j] == big[i])
+			if (little[j + 1] == '\0')
 				return ((char*)&big[i]);
 			j++;
 		}

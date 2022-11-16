@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:59:52 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/14 15:59:19 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:08:39 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,18 @@ char **ft_split(char const *s,char c)
 	split[index_word][index_letter] = '\0';
 	return (split);
 }
-
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 
 int main()
 {
-	char *tab = "salut les gars";
+	char tab[20] = "salut les gars";
 	int i;
 
 	i = 0;
 	while (i < 10)
 	{
-		printf("%c",ft_split(tab, " "));
+		printf("%c",ft_split(tab, "a"));
 		i++;
 	}
 	i = 0;
