@@ -6,11 +6,24 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:47:43 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2022/11/11 14:51:57 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/16 09:40:01 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	This function takes as parameters:
+**	
+**	const void *s1 -> the array of characters you want to compare to s2
+**	const void *s2 -> the second array of characters, you want to compare it to s1
+**	size_t n -> the numbers of characters you want to compare
+**
+**	===============================================================================
+**	
+**	This function will compare the n first characters between s1 and s2
+**	the function return and integer less than , equal or greater than zero
+*/
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
