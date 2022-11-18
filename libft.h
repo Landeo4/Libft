@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:35 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/16 12:00:02 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:14:00 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int ft_atoi(const char *nptr);
 void ft_bzero(void *s, size_t n);
