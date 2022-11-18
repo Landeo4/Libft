@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:44:43 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/17 15:32:26 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2022/11/18 10:55:33 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,11 @@ char *ft_strdup(const char *s)
 		i++;
 	}
 	return (str);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	printf("%s",ft_strdup("salut"));
 }

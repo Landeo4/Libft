@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:47:43 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2022/11/16 09:40:01 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/18 10:43:34 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str1 = (unsigned char*)s1;
 	str2 = (unsigned char*)s2;
-	while (str1[i] == str2[i] && n > i)
+	if (n == 0)							//demander s'il fallait le hardcode
+		return (0);
+	while (str1[i] && str2[i] && i < (n - 1))
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
