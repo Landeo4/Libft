@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:59:52 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/16 14:08:39 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/19 12:04:22 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,6 @@ char *ft_sep(const char *s, char c)
 	while (string[i] == c)
 		i++;
 	return (string);
-}
-
-char **ft_free(char ** split)
-{
-	if (split == 0)
-	{
-		free(split);
-	}
-	return (split);
 }
 
 char **ft_conv(char const *s, char c, char **split)
@@ -68,26 +59,24 @@ char **ft_split(char const *s,char c)
 	index_word = 0;
 	split = malloc(sizeof(char *) * ft_strlen(s));
 	if (split == 0)
-	{
-		ft_free(split);
 		return (0);
-	}
 	ft_sep(s, c);
 	split[index_word][index_letter] = '\0';
 	return (split);
 }
-/*
-#include <stdio.h>
+
+/*#include <stdio.h>
 
 int main()
 {
-	char tab[20] = "salut les gars";
+	char *tab[20];
 	int i;
 
+	tab[i] = "salut les gars";
 	i = 0;
 	while (i < 10)
 	{
-		printf("%c",ft_split(tab, "a"));
+		printf("%s",ft_split(tab, 'a'));
 		i++;
 	}
 	i = 0;
@@ -96,5 +85,4 @@ int main()
 		free(tab[i]);
 	}
 	free(tab);
-}
-*/
+}*/

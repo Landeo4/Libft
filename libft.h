@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:35 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/18 14:14:00 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/19 11:29:10 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memset(void *s,int c, size_t n);
 void ft_putchar_fd(char c, int fd);
 void ft_putendl_fd(char *s, int fd);
-void ft_putnbr_fd_(int n, int fd);
+void ft_putnbr_fd(int n, int fd);
 void ft_putstr_fd(char *s, int fd);
 char **ft_split(char const *s,char c);
 char *ft_strchr(const char *s, int c);
