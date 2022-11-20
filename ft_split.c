@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tpotilli@student42.fr  <marvin@42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:59:52 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/19 12:04:22 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/20 17:00:03 by tpotilli@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_sep(const char *s, char c)
+char	*ft_sep(const char *s, char c)
 {
 	int i;
 	char *string;
@@ -24,7 +24,7 @@ char *ft_sep(const char *s, char c)
 	return (string);
 }
 
-char **ft_conv(char const *s, char c, char **split)
+char	**ft_conv(char const *s, char c, char **split)
 {
 	int i;
 	int index_word;
@@ -49,7 +49,8 @@ char **ft_conv(char const *s, char c, char **split)
 	}
 	return (split);
 }
-char **ft_split(char const *s,char c)
+
+char	**ft_split(char const *s,char c)
 {
 	char **split;
 	int index_word;
@@ -64,19 +65,17 @@ char **ft_split(char const *s,char c)
 	split[index_word][index_letter] = '\0';
 	return (split);
 }
-
-/*#include <stdio.h>
-
+/*
 int main()
 {
-	char *tab[20];
+	char **tab;
 	int i;
 
-	tab[i] = "salut les gars";
+	*tab = "salut les gars";
 	i = 0;
 	while (i < 10)
 	{
-		printf("%s",ft_split(tab, 'a'));
+		write(1, ft_split(tab[i],'a'),1);
 		i++;
 	}
 	i = 0;
