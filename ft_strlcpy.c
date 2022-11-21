@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:09:41 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/19 11:19:47 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/21 08:08:41 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	len;
 
 	i = 0;
-	len = ft_strlen(src);
 	if (!dest || !src)
 		return (0);
+	len = ft_strlen(src);
 	if (size != 0)
 	{
 		while (src[i] && i < (size - 1))
@@ -45,3 +45,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (len);
 }
+
+/*int main()
+{
+	char *dest = "";
+	printf("%ld",ft_strlcpy(dest,"",0));
+}*/
