@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 11:06:05 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:09:32 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,30 @@
 
 #include "libft.h"
 
-char	*ft_sep(char const *s1, char const *set, char *string)
+static int	ft_size(char const *s1, char const *set)
+{
+	int i;
+	int len;
+	int j;
+
+	j = 0;
+	len = 0;
+	i = 0;
+	while (s1[i])
+	{
+		i++;
+		len++;
+		while (s1[i] == set[j])
+		{
+			i++;
+			j++;
+		}
+		j = 0;
+	}
+	return (len);
+}
+
+static char	*ft_sep(char const *s1, char const *set, char *string)
 {
 	size_t i;
 	int j;
@@ -52,17 +75,20 @@ char	*ft_sep(char const *s1, char const *set, char *string)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*string;
+	int		len;
 
 	if (!s1 || !set)
 		return (0);
-	string = malloc(sizeof(char) * ft_strlen(s1 + 1));
-	if (!string)
-		return (NULL);
+	len = ft_size(s1, set);
+	string = malloc(sizeof(char) * len);
 	ft_sep(s1, set, string);
 	return (string);
 }
 
+/*
 int main()
 {
 	printf("%s",ft_strtrim("   xxxtripouille xxx", "xxx"));
 }
+
+// trouver une solution pour le malloc */

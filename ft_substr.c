@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:50:17 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/19 09:52:47 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:55:43 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,43 @@
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+/*static int	ft_len(char const *s, unsigned int start, size_t len)
 {
-	char *s2;
 	size_t i;
-	unsigned j;
 
-	j = 0;
 	i = start;
-	len = ft_strlen(s);
-	if (len == 0)
-		return (0);
-	if (!s)
-		return (NULL);
-	s2 = malloc(sizeof(char) * len + 1);
-	if (s2 == NULL)
-		return (NULL);
-	while (s[i] && len + start > i)
-	{
-		s2[j] = s[i];
+	while (s[i] && i < len)
 		i++;
-		j++;
+	return (i);
+}*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char *string;
+	size_t i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	if (len < start)
+		return (ft_strdup(""));
+	string = malloc(sizeof(char) * (len + 1));
+	len = len + start;
+	if (!string)
+		return (NULL);
+	while (s[start] && i < len)
+	{
+		string[i] = s[start];
+		start++;
+		i++;
+		if (len == start)
+			break;
 	}
-	s2[j] = '\0';
-	return (s2);
+	string[i] = '\0';
+	return (string);
 }
+
+/*int main()
+{
+	printf("%s",ft_substr("BONJOUR LES HARICOTS !", 8, 14));
+}*/

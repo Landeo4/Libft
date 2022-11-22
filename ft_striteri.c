@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:13:44 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 18:10:17 by tpotilli         ###   ########.fr       */
+/*   Created: 2022/11/21 17:31:59 by tpotilli          #+#    #+#             */
+/*   Updated: 2022/11/21 17:37:26 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_streteri(char *s, void(*f)(unsigned int, char *))
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	if (!(s1) || !(s2) || n == 0)
-		return (0);
-	while (i < n)
+	while (s[i])
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		s[i] = f(i, &s);
+		i++;
 	}
-	i--;
-	return (s1[i] - s2[i]);
 }
-
-/*int main()
-{
-	printf("%d",ft_strncmp("sallut","sallut",0));
-}*/

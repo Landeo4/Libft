@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:33:54 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 10:25:18 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:35:42 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,25 +74,27 @@ char	**ft_split(char const *s,char c)
 	ft_cpy(s, c, split, i);
 	return (split);
 }
-
-
-/*int main()
+/*
+int main(void)
 {
-	char **tab;
-	int i;
-
-	*tab = "salut les gars";
-	i = 0;
-	while (i < 20)
-	{
-		write(1, ft_split(tab[i], 'a'), 1);
-		i++;
-	}
-	i = 0;
-	while (i < 20)
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
+    char **str = ft_split("hello comment ca va ?", '?');
+    int i = 0;
+    int j = 0;
+    while (str[i])
+    {
+        while (str[i][j])
+        {
+            printf("%c", str[i][j]);
+            j++;
+        }
+        i++;
+        j = 0;
+        printf("\n");
+    }
+    while (i >= 0)
+    {
+        free(str[i]);
+        i--;
+    }
+    free(str);
 }*/
