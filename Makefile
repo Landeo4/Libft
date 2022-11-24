@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/11/16 12:00:11 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/11/24 07:13:56 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS	=	ft_atoi.c\
 			ft_strrchr.c\
 			ft_strncmp.c\
 			ft_strtrim.c\
+			ft_itoa.c\
 
 OBJS	=	$(SRCS:.c=.o)
 

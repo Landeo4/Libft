@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:25:37 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 17:43:24 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:58:51 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 **	This function takes as parameters:
 **	
 **	char const *s -> the string you want to apply the "f" function
-**	char (*f) (unsigned int, char) -> f is the function you want to apply at each characters of s
+**	char (*f) (unsigned int, char) -> f is the function you want to apply 
+**	at each characters of s
 **
 **	==========================================================================
 **	
@@ -25,9 +26,9 @@
 
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	unsigned int i;
-	char	*str;
-	unsigned int len;
+	unsigned int	i;
+	char			*str;
+	unsigned int	len;
 
 	len = ft_strlen(s);
 	i = 0;
@@ -36,7 +37,7 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 	str = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
-	while(i < len)
+	while (i < len)
 	{
 		str[i] = f(i, s[i]);
 		i++;

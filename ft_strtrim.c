@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 14:09:32 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/24 05:41:09 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (0);
 	len = ft_size(s1, set);
-	string = malloc(sizeof(char) * len);
+	string = malloc(sizeof(char) * len + 1);
 	ft_sep(s1, set, string);
 	return (string);
 }
@@ -90,5 +90,4 @@ int main()
 {
 	printf("%s",ft_strtrim("   xxxtripouille xxx", "xxx"));
 }
-
 // trouver une solution pour le malloc */

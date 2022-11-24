@@ -6,20 +6,23 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:31:59 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 17:37:26 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/24 07:13:42 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include "libft.h"
 
-void	ft_streteri(char *s, void(*f)(unsigned int, char *))
+void	ft_striteri(char *s, void(*f)(unsigned int, char *))
 {
 	int i;
 
 	i = 0;
+	if (!s || !f)
+		return ;
 	while (s[i])
 	{
-		s[i] = f(i, &s);
+		s[i] = f(i, s[i]);
 		i++;
 	}
-}
+	s[i] = '\0';
+}*/

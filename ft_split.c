@@ -6,22 +6,20 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:33:54 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/21 14:35:42 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/24 06:02:15 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_sep(char **split, char c, int index_letter, int index_word)
+static int	ft_sep(char *s, char c, int i)
 {
-	int i;
-
-	while (split[index_word][index_letter] == c)
+	while (s[i] == c)
 		i++;
-	return (split);
+	return (i);
 }
 
-static char **ft_free(char **split, const char *s)
+/*static char **ft_free(char **split, const char *s)
 {
 	int i;
 	int index_word;
@@ -35,6 +33,20 @@ static char **ft_free(char **split, const char *s)
 	}
 	free(split);
 	return (NULL);
+}*/
+
+static int	ft_len_word(char const *s, char c, int i)
+{
+	int cpt;
+
+	cpt = 0;
+	while (s[i] != c)
+	{
+		i++;
+		cpt++;	
+	}
+	cpt++;
+	return (cpt);
 }
 
 static char	**ft_cpy(char const *s, char c, char **split, int i)
@@ -46,9 +58,9 @@ static char	**ft_cpy(char const *s, char c, char **split, int i)
 	index_letter = 0;
 	while (s[i])
 	{
-		ft_sep(split, c, index_letter, index_word);
-		split[index_word] = malloc(sizeof(char) * ft_strlen(s) + 1);
-		ft_free(split, s);
+		ft_sep((char *)s, c, i);
+		split[index_word] = malloc(sizeof(char) * ft_len_word(s, c, i));
+		//ft_free(split, s);
 		while (s[i] != c)
 		{
 			split[index_word][index_letter] = s[i];
@@ -74,10 +86,10 @@ char	**ft_split(char const *s,char c)
 	ft_cpy(s, c, split, i);
 	return (split);
 }
-/*
+
 int main(void)
 {
-    char **str = ft_split("hello comment ca va ?", '?');
+    char **str = ft_split("hello comment ca va ?", 'a');
     int i = 0;
     int j = 0;
     while (str[i])
@@ -97,4 +109,4 @@ int main(void)
         i--;
     }
     free(str);
-}*/
+}
