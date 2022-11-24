@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 17:59:40 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/24 08:02:31 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/24 08:13:33 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ size_t	ft_strlcat(char *dest,const char *src, size_t size)
 {
 	size_t i;
 	size_t len;
+	size_t len2;
 
+	len = ft_strlen(dest);
 	i = 0;
 	len = ft_strlen(src);
 	if (!dest || !src)
 		return (len);
-	if ((size - 1) <= len)
-		return (len2 + size);
+	(void)len2;
+	/*if ((size - 1) <= len)
+		return (len2 + size);*/
 	if (size > 0)
 	{
 		while (src[i] && i < (size - 1))
@@ -44,5 +47,5 @@ size_t	ft_strlcat(char *dest,const char *src, size_t size)
 			i++;
 		}
 	}
-	return (len + len2);
+	return (len);
 }
