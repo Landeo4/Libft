@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/24 05:41:09 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:43:32 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 **	
 **	This function will allocate an array of "nmemb" element of size "size"
 **	And will then fill the allocated array with 0 and then return it.
+**	pas bon =(
 */
 
 #include "libft.h"
@@ -27,22 +28,22 @@
 static int	ft_size(char const *s1, char const *set)
 {
 	int i;
-	int len;
 	int j;
+	int len;
 
-	j = 0;
 	len = 0;
+	j = 0;
 	i = 0;
 	while (s1[i])
 	{
-		i++;
-		len++;
 		while (s1[i] == set[j])
 		{
 			i++;
 			j++;
 		}
 		j = 0;
+		i++;
+		len++;
 	}
 	return (len);
 }
@@ -80,14 +81,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (0);
 	len = ft_size(s1, set);
-	string = malloc(sizeof(char) * len + 1);
+	string = malloc(sizeof(char) * len);
+	if (string == NULL)
+		return (NULL);
 	ft_sep(s1, set, string);
 	return (string);
 }
 
-/*
 int main()
 {
 	printf("%s",ft_strtrim("   xxxtripouille xxx", "xxx"));
 }
-// trouver une solution pour le malloc */
+// trouver une solution pour le malloc 

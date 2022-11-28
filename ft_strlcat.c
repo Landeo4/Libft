@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 17:59:40 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/24 08:13:33 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:40:20 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,59 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest,const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	len;
+	size_t	len2;
+
+	len2 = ft_strlen(src);
+	len = 0;
+	if (size == 0)
+		return (len + len2);
+	while (dest[len] && len < size)
+		len++;
+	i = len;
+	while (i < size - 1 && src[i - len])
+	{
+		dest[i] = src[i - len];
+		i++;
+	}
+	if (i < size)
+		dest[i] = '\0';
+	return (len + len2);
+}
+
+/*size_t	ft_strlcat(char *dest,const char *src, size_t size)
 {
 	size_t i;
 	size_t len;
 	size_t len2;
 
-	len = ft_strlen(dest);
-	i = 0;
-	len = ft_strlen(src);
-	if (!dest || !src)
-		return (len);
-	(void)len2;
-	/*if ((size - 1) <= len)
-		return (len2 + size);*/
-	if (size > 0)
+	len = 0;
+	len2 = ft_strlen(src);
+	if (size == 0)
+		return (len + len2);
+	while (dest[len] && len < size)
+		len++;
+	i = len;
+	while (i < size - 1 && src[i - len])
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dest[i + len] = src[i];
-			i++;
-		}
+		dest[i] = src[i - len];
+		i++;
 	}
-	return (len);
+	if (i < size)
+		dest[i + len] = '\0';
+	return (len + len2);
 }
+*/
+/*
+#include <bsd/string.h>
+
+int main()
+{
+	char *dest = "CCCCCCCCCCC";
+	char *src = "AAAAAAAAAAA";
+	printf("%li", strlcat(dest, src, -1));
+	printf("%li \n",ft_strlcat(dest, src, -1));
+}*/

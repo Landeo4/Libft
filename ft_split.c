@@ -6,17 +6,32 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:33:54 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/24 06:02:15 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:28:56 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_sep(char *s, char c, int i)
+static int ft_sep_cmp(char const *s, char c)
 {
-	while (s[i] == c)
+	long int i;
+	long int word;
+	
+	i = 0;
+	word = 1;
+	while (s[i] && s[i] == c)
 		i++;
-	return (i);
+	if (c == '\0')
+		return (word + 1);
+	while (s[i])
+	{
+		if (s[i] == c)
+			i++;
+		if (s[i] != c)
+			word++;
+		i++;
+	}
+	return (word + 1);
 }
 
 /*static char **ft_free(char **split, const char *s)
@@ -35,18 +50,22 @@ static int	ft_sep(char *s, char c, int i)
 	return (NULL);
 }*/
 
-static int	ft_len_word(char const *s, char c, int i)
+int	ft_cpt_word(char const *s, char c, int i)
 {
 	int cpt;
 
 	cpt = 0;
-	while (s[i] != c)
+	while (s[i])
 	{
-		i++;
-		cpt++;	
+		while (s[i] != c)
+			i++;
+		if (s[i] == c)
+		{
+			i++;
+			cpt++;
+		}
 	}
-	cpt++;
-	return (cpt);
+	return (cpt + 1);
 }
 
 static char	**ft_cpy(char const *s, char c, char **split, int i)
@@ -58,8 +77,7 @@ static char	**ft_cpy(char const *s, char c, char **split, int i)
 	index_letter = 0;
 	while (s[i])
 	{
-		ft_sep((char *)s, c, i);
-		split[index_word] = malloc(sizeof(char) * ft_len_word(s, c, i));
+		split[index_word] = malloc(sizeof(char) * ft_sep_cmp(s, c));
 		//ft_free(split, s);
 		while (s[i] != c)
 		{
@@ -70,22 +88,40 @@ static char	**ft_cpy(char const *s, char c, char **split, int i)
 		split[index_word][index_letter] = '\0';
 		index_letter = 0;
 		index_word++;
-		i++;
+		while (s[i] == c)
+			i++;
 	}
 	split[index_letter] = '\0';
 	return (split);
 }
 
-char	**ft_split(char const *s,char c)
+char	**ft_split(char const *s, char c)
 {
 	char **split;
 	int i;
+	int len;
 
+	if (!s)
+		return (NULL);
+	len = ft_sep_cmp(s, c);
 	i = 0;
-	split = malloc(sizeof(char *) * ft_strlen(s) + 1);
+	if (len == 1 || c == '\0')
+	{
+		split = malloc(sizeof(NULL));
+		return split;
+	}
+	split = malloc(sizeof(char *) * ft_cpt_word(s, c, i));
+	while (s[i] == c)
+		i++;
 	ft_cpy(s, c, split, i);
 	return (split);
 }
+
+/*
+int main()
+{
+	printf("%i",ft_cpt_word("salut les gars", ' ', 0));
+}*/
 
 int main(void)
 {
