@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/28 16:43:32 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:22:57 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,58 +38,58 @@ static int	ft_size(char const *s1, char const *set)
 	{
 		while (s1[i] == set[j])
 		{
-			i++;
 			j++;
+			i++;
 		}
 		j = 0;
 		i++;
 		len++;
 	}
+	len++;
 	return (len);
 }
 
-static char	*ft_sep(char const *s1, char const *set, char *string)
+static char	*ft_sep(char const *s1, char const *set, char *str, size_t c)
 {
-	size_t i;
-	int j;
+	size_t 	i;
+	size_t 	j;
 
 	i = 0;
-	j = 0;
 	while (s1[i])
 	{
-		while (s1[i] != set[j])
+		j = 0;
+		if (s1[i] != set[j])
 		{
-			string[i] = s1[i];
+			str[c] = s1[i];
+			c++;
 			i++;
 		}
 		while (s1[i] == set[j])
 		{
-			i++;
 			j++;
+			i++;	
 		}
-		j = 0;
 	}
-	string[i] = '\0';
-	return (string);
+	str[c] = '\0';
+	return (str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*string;
 	int		len;
+	size_t	c;
 
+	c = 0;
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	len = ft_size(s1, set);
 	string = malloc(sizeof(char) * len);
 	if (string == NULL)
 		return (NULL);
-	ft_sep(s1, set, string);
+	ft_sep(s1, set, string, c);
 	return (string);
 }
 
-int main()
-{
-	printf("%s",ft_strtrim("   xxxtripouille xxx", "xxx"));
-}
-// trouver une solution pour le malloc 
+
+// trouver une solution pour le malloc
