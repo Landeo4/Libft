@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:33:54 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/28 15:28:56 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:43:33 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,14 @@ static int ft_sep_cmp(char const *s, char c)
 	
 	i = 0;
 	word = 1;
-	while (s[i] && s[i] == c)
-		i++;
 	if (c == '\0')
 		return (word + 1);
 	while (s[i])
 	{
 		if (s[i] == c)
-			i++;
-		if (s[i] != c)
 			word++;
-		i++;
 	}
-	return (word + 1);
+	return (word);
 }
 
 /*static char **ft_free(char **split, const char *s)
@@ -52,20 +47,16 @@ static int ft_sep_cmp(char const *s, char c)
 
 int	ft_cpt_word(char const *s, char c, int i)
 {
-	int cpt;
+	int word;
 
-	cpt = 0;
+	word = 0;
 	while (s[i])
 	{
 		while (s[i] != c)
 			i++;
-		if (s[i] == c)
-		{
-			i++;
-			cpt++;
-		}
+		word++;
 	}
-	return (cpt + 1);
+	return (word + 1);
 }
 
 static char	**ft_cpy(char const *s, char c, char **split, int i)

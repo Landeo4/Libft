@@ -6,71 +6,83 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/11/30 14:22:57 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:39:20 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **	This function takes as parameters:
 **	
-**	size_t nmemb -> the number of elements in the array that it will allocate
-**	size_t size -> the size in bytes of each array element
+**	char const *s1 -> the array you want to keep
+**	char const *set -> the element you want to avoid in s1
 **
 **	==========================================================================
 **	
-**	This function will allocate an array of "nmemb" element of size "size"
-**	And will then fill the allocated array with 0 and then return it.
-**	pas bon =(
+**	This function will create a new array where set is not in s1.
 */
 
 #include "libft.h"
 
-static int	ft_size(char const *s1, char const *set)
+int	ft_up(char const *s1, char const *set)
 {
+	int j;
 	int i;
+	int end;
+
+	while (s1[i])
+	{
+		while (s1[i] == set[j])
+		{
+			if (ft_strncmp(s1, set, ft_strlen(s1)) == 0)
+				return (0);
+			i++;
+			end++;
+		}
+	}
+	return (0);
+}
+
+int ft_down(char const *s1, char const *set)
+{
+	int start;
 	int j;
 	int len;
 
-	len = 0;
+	len = ft_strlen(s1);
 	j = 0;
-	i = 0;
-	while (s1[i])
+	start = 0;
+	while (start < len && set[j])
 	{
-		while (s1[i] == set[j])
-		{
-			j++;
-			i++;
-		}
 		j = 0;
-		i++;
-		len++;
+		while (s1[start] != set[j] && set[j])
+			j++;
+		if (s1[start] == set[j])
+			start++;
 	}
-	len++;
-	return (len);
+	return (start);
 }
 
-static char	*ft_sep(char const *s1, char const *set, char *str, size_t c)
+char	*ft_cpy(char const *s1, char const *set, char *str)
 {
-	size_t 	i;
-	size_t 	j;
-
+	int		i;
+	int		u;
+	int		j;
+	
 	i = 0;
+	u = 0;
 	while (s1[i])
 	{
 		j = 0;
+		while (s1[i] == set[j])
+			j++;
 		if (s1[i] != set[j])
 		{
-			str[c] = s1[i];
-			c++;
-			i++;
+			str[u] = s1[i];
+			u++;
 		}
-		while (s1[i] == set[j])
-		{
-			j++;
-			i++;	
-		}
+		i++;
 	}
-	str[c] = '\0';
+	str[u] = '\0';
 	return (str);
 }
 
@@ -78,18 +90,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*string;
 	int		len;
-	size_t	c;
 
-	c = 0;
 	if (!s1 || !set)
 		return (NULL);
-	len = ft_size(s1, set);
-	string = malloc(sizeof(char) * len);
+	len = (ft_down(s1, set) + ft_up(s1, set));
+	string = malloc(sizeof(char) * len + 2);
 	if (string == NULL)
 		return (NULL);
-	ft_sep(s1, set, string, c);
+	ft_cpy(s1, set, string);
 	return (string);
 }
 
-
-// trouver une solution pour le malloc
+int main()
+{
+	printf("%i",ft_up("   xxxtripouille", " x"));
+}
