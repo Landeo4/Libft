@@ -6,27 +6,24 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:33:54 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/12/01 15:43:33 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:11:20 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_sep_cmp(char const *s, char c)
+static int ft_letter(char const *s, char c)
 {
 	long int i;
-	long int word;
-	
+	long int letter;
+
 	i = 0;
-	word = 1;
+	letter = 1;
 	if (c == '\0')
-		return (word + 1);
-	while (s[i])
-	{
-		if (s[i] == c)
-			word++;
-	}
-	return (word);
+		return (letter + 1);
+	while (s[i] != c)
+		letter++;
+	return (letter);
 }
 
 /*static char **ft_free(char **split, const char *s)
@@ -68,7 +65,7 @@ static char	**ft_cpy(char const *s, char c, char **split, int i)
 	index_letter = 0;
 	while (s[i])
 	{
-		split[index_word] = malloc(sizeof(char) * ft_sep_cmp(s, c));
+		split[index_word] = malloc(sizeof(char *) * ft_letter(s, c));
 		//ft_free(split, s);
 		while (s[i] != c)
 		{
@@ -94,14 +91,14 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	len = ft_sep_cmp(s, c);
 	i = 0;
+	len = ft_cpt_word(s, c, i);
 	if (len == 1 || c == '\0')
 	{
 		split = malloc(sizeof(NULL));
 		return split;
 	}
-	split = malloc(sizeof(char *) * ft_cpt_word(s, c, i));
+	split = malloc(sizeof(char) * len);
 	while (s[i] == c)
 		i++;
 	ft_cpy(s, c, split, i);
@@ -116,7 +113,7 @@ int main()
 
 int main(void)
 {
-    char **str = ft_split("hello comment ca va ?", 'a');
+    char **str = ft_split("  tripouille  42  ", ' ');
     int i = 0;
     int j = 0;
     while (str[i])

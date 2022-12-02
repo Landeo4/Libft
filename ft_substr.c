@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:50:17 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/23 21:59:13 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:07:40 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@
 
 #include "libft.h"
 
+int		ft_check(char const *s, size_t len, unsigned int start)
+{
+	size_t i;
+
+	i = 0;
+	while (s[start] && i < len)
+	{
+		i++;
+		start++;
+	}
+	return (i);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*string;
@@ -34,19 +47,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (0);
-	if (len < start)
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
+	len = ft_check(s, len, start);
 	string = malloc(sizeof(char) * (len + 1));
-	len = len + start;
 	if (!string)
 		return (NULL);
-	while (s[start] && i < len)
+	while (i < len && (start + i) < ft_strlen(s))
 	{
-		string[i] = s[start];
-		start++;
+		string[i] = s[start + i];
 		i++;
-		if (len == start)
-			break ;
 	}
 	string[i] = '\0';
 	return (string);
