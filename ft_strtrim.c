@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:51:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/12/02 18:03:47 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:25:07 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int len;
-	char *str;
+	int		len;
+	char	*str;
 
 	if (!s1)
 		return (NULL);
 	if (!set)
-		return (s1);
+		return (ft_strdup(s1));
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	len = ft_strlen(s1);

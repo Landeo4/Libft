@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:50:17 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/12/02 17:07:40 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:25:32 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 
 #include "libft.h"
 
-int		ft_check(char const *s, size_t len, unsigned int start)
+int	ft_check(char const *s, size_t len, unsigned int start)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[start] && i < len)

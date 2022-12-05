@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:13:35 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/28 15:34:30 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:40:48 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ char *ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 void	ft_striteri(char *s, void(*f)(unsigned int, char *));
 
-
+typedef struct	s_list
+{
+	void *content;
+	struct s_list *next;
+}	t_list;
 
 #endif
