@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/12/05 05:00:22 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/12/06 10:43:55 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,13 +46,11 @@ SRCS	=	ft_atoi.c\
 			ft_itoa.c\
 			ft_striteri.c\
 
-BONUS	=	ft_lstsize.c\
 
 OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc
 RM		=	rm -rf
-BONUS_OBJS = $(BONUS:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
 
 .c.o :
@@ -62,9 +60,6 @@ $(NAME) :	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all : ${NAME}
-
-bonus : $(BONUS_OBJS)
-		$(NAME)
 
 clean :
 		${RM} ${OBJS}
