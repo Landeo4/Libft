@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/12/07 15:28:17 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/12/07 22:12:07 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,7 @@ OBJS	=	$(SRCS:.c=.o)
 CC		=	cc
 RM		=	rm -rf
 CFLAGS	=	-Wall -Wextra -Werror
-bonus	=	ft_listsize.c\
-BONUS_OBJS	=	$(bonus:.c=.o)
+
 .c.o :
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
@@ -59,9 +58,6 @@ $(NAME) :	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all : ${NAME}
-
-bonus : ${BONUS_OBJS}
-		ar -rcs {NAME} {BONUS_OBJS}
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)

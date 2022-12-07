@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:25:37 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/12/07 15:16:52 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/07 22:29:36 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 	char			*str;
 	unsigned int	len;
 
-	len = ft_strlen(s);
-	i = 0;
 	if (!s || !f)
 		return (NULL);
+	len = ft_strlen(s);
+	i = 0;
 	str = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
