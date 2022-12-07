@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:59:28 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/12/07 13:12:31 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:21:47 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
+	if (len == 0 && (!big || !little))
+		return (NULL);
 	if (little[i] == '\0')
 		return ((char *)big);
 	while (big[i] && (len > i))
