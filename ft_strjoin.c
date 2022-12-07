@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:55:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/12/06 10:54:32 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:46:24 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		lens;
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	lens = ft_strlen(s1);
 	str = malloc(sizeof(char) * lens + ft_strlen(s2) + 1);
 	if (!str)

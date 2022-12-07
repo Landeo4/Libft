@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:02:31 by tpotillion        #+#    #+#             */
-/*   Updated: 2022/11/19 11:01:27 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:09:05 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*tab;
 
-	if (nmemb == 0 || size == 0 || nmemb >= 65535 || size >= 65535)
+	if (size > 0 && SIZE_MAX / size < nmemb)
 		return (NULL);
 	tab = malloc(size * nmemb);
 	if (tab == NULL)

@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/12/06 10:43:55 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/12/07 12:11:59 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,13 +46,12 @@ SRCS	=	ft_atoi.c\
 			ft_itoa.c\
 			ft_striteri.c\
 
-
 OBJS	=	$(SRCS:.c=.o)
-
-CC		=	gcc
+CC		=	cc
 RM		=	rm -rf
 CFLAGS	=	-Wall -Wextra -Werror
-
+bonus	=	ft_listsize.c\
+BONUS_OBJS	=	$(bonus:.c=.o)
 .c.o :
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
@@ -60,6 +59,10 @@ $(NAME) :	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all : ${NAME}
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean :
 		${RM} ${OBJS}
