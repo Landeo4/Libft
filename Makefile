@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/12/07 12:11:59 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/12/07 15:28:17 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,9 @@ $(NAME) :	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all : ${NAME}
+
+bonus : ${BONUS_OBJS}
+		ar -rcs {NAME} {BONUS_OBJS}
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)

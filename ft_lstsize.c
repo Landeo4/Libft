@@ -6,13 +6,13 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:44:02 by tpotilli          #+#    #+#             */
-/*   Updated: 2022/12/07 11:58:29 by tpotilli         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:30:19 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"
+#include "libft.h"
 
-void	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int i;
 
@@ -23,4 +23,4 @@ void	ft_lstsize(t_list *lst)
 		lst->next;
 	}
 	return (i);
-}*/
+}
