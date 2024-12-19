@@ -6,7 +6,7 @@
 #    By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 12:49:24 by tpotillion        #+#    #+#              #
-#    Updated: 2022/12/08 06:25:48 by tpotilli         ###   ########.fr        #
+#    Updated: 2022/12/11 09:03:37 by tpotilli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,10 +58,6 @@ $(NAME) :	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all : ${NAME}
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean :
 		${RM} ${OBJS}
